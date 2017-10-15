@@ -1,0 +1,23 @@
+<mat-sidenav-container class="docs-component-viewer-sidenav-container">
+  <mat-sidenav #sidenav class="docs-component-viewer-sidenav"
+              [opened]="!isScreenSmall()"
+              [mode]="isScreenSmall() ? 'over' : 'side'">
+    <nav *ngFor="let category of docItems.getCategories((params | async)?.section)">
+      <h3>{{category.name}}</h3>
+      <ul>
+        <li *ngFor="let component of category.items">
+          <a [routerLink]="'/' + (params | async)?.section+ '/' + component.id"
+             routerLinkActive="docs-component-viewer-sidenav-item-selected">
+            {{component.name}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+
+  <div class="docs-component-sidenav-content">
+    <component-page-header (toggleSidenav)="sidenav.toggle()"></component-page-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,56 @@
+@import '../../../styles/constants';
+
+app-component-viewer {
+  font-weight: 400;
+  padding: 20px $content-padding-side 50px;
+
+  @media ($mat-xsmall) {
+    padding-left: $content-padding-side-xs;
+    padding-right: $content-padding-side-xs;
+  }
+}
+
+.docs-component-viewer {
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+.docs-component-viewer-section-tab {
+  text-transform: uppercase;
+}
+
+.docs-component-viewer-tabbed-content {
+  margin-bottom: 50px;
+}
+
+.docs-component-viewer-content {
+  position: relative;
+  min-height: 500px;
+
+  table-of-contents {
+    display: inline-flex;
+    top: 35px;
+
+    @media (max-width: $small-breakpoint-width) {
+      display: flex;
+      order: -1;
+      position: inherit;
+      width: auto;
+    }
+  }
+}
+
+.docs-component-view-text-content {
+  display: inline-flex;
+  flex-grow: 1;
+}
+
+.docs-component-overview {
+  width: 80%;
+  margin-right: 20px;
+
+  @media (max-width: $small-breakpoint-width) {
+    width: 100%;
+    margin-right: 0;
+  }
+}

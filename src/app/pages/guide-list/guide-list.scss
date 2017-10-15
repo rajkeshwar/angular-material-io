@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.docs-guide-list {
+  margin: 50px;
+  flex-grow: 1;
+}
+
+.docs-guide-item, .docs-guide-item:hover {
+  text-decoration: none;
+}
